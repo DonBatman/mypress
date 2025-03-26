@@ -19,6 +19,18 @@ minetest.register_craftitem("mypress:sheet_gold",{
 	inventory_image = "mypress_sheet_gold.png",
 	description = "Sheet Of Gold",
 })
+minetest.register_craftitem("mypress:sheet_paper",{
+	inventory_image = "mypress_paper.png",
+	description = "Sheet Of Paper",
+})
+minetest.register_craftitem("mypress:book",{
+	inventory_image = "mypress_book.png",
+	description = "Book",
+})
+minetest.register_craftitem("mypress:copper_wire",{
+	inventory_image = "mypress_copper_wire.png",
+	description = "Copper Wire",
+})
 
 if minetest.get_modpath("mystreets") then
 		minetest.register_craftitem("mypress:sheet_lead",{
