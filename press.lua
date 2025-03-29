@@ -2,7 +2,7 @@ local give = 0
 local material = {}
 
 minetest.register_node("mypress:machine_top", {
-	description = "Press Machine Top",
+--	description = "Press Machine Top",
 	tiles = {
 		"mypress_machine_top_top.png",
 		"mypress_machine_top_bottom.png^[transformR180",
@@ -44,7 +44,8 @@ minetest.register_node("mypress:machine", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
---	inventory_image = "mypress_mach_inv.png",
+	inventory_image = "mypress_press_inv.png",
+	wield_image = "mypress_press_wield.png",
 	groups = {cracky=2},
 	node_box = {
 		type = "fixed",

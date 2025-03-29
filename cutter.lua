@@ -2,7 +2,7 @@ local give = 0
 local material = {}
 
 minetest.register_node("mypress:cutter_top", {
-	description = "Cutter Machine Top",
+--	description = "Cutter Machine Top",
 	tiles = {
 		"mypress_cutter_top_top.png",
 		"mypress_cutter_top_front.png",
@@ -43,7 +43,8 @@ minetest.register_node("mypress:cutter", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
---	inventory_image = "mypress_mach_inv.png",
+	inventory_image = "mypress_cutter_inv.png",
+	wield_image = "mypress_cutter_wield.png",
 	groups = {cracky=2},
 	node_box = {
 		type = "fixed",
