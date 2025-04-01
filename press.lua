@@ -124,19 +124,42 @@ end,
 on_receive_fields = function(pos, formname, fields, sender)
     if fields.mak then
         local mat_tab = {
-            {"default:tin_ingot", "tin", 2},
-            {"default:bronze_ingot", "bronze", 2},
-            {"default:copper_ingot", "copper", 2},
-            {"default:steel_ingot", "steel", 2},
-            {"default:gold_ingot", "gold", 2},
-            {"mystreets:ingot_lead", "lead", 2},
-            {"mystreets:ingot_nickel", "nickel", 2},
-            {"mystreets:ingot_zinc", "zinc", 2},
-            {"default:acacia_wood", "paper", 10},
-            {"default:aspen_wood", "paper", 10},
-            {"default:pine_wood", "paper", 10},
-            {"default:wood", "paper", 10},
-        }
+            {"default:tin_ingot", "mypress:sheet_tin", 2},
+            {"default:bronze_ingot", "mypress:sheet_bronze", 2},
+            {"default:copper_ingot", "mypress:sheet_copper", 2},
+            {"default:steel_ingot", "mypress:sheet_steel", 2},
+            {"default:gold_ingot", "mypress:sheet_gold", 2},
+            {"mystreets:ingot_lead", "mypress:sheet_lead", 2},
+            {"mystreets:ingot_nickel", "mypress:sheet_nickel", 2},
+            {"mystreets:ingot_zinc", "mypress:sheet_zinc", 2},
+            {"default:acacia_wood", "mypress:sheet_paper", 10},
+            {"default:aspen_wood", "mypress:sheet_paper", 10},
+            {"default:pine_wood", "mypress:sheet_paper", 10},
+            {"default:wood", "mypress:sheet_paper", 10},
+            {"default:cobble", "default:sand", 1},
+            {"default:desert_cobble", "default:desert_sand", 1},
+            {"default:stone", "default:sand", 1},
+            {"default:cobble", "default:sand", 1},
+            {"default:gravel", "default:sand", 1},
+            {"default:coal_block", "default:diamond", 1},
+            {"mycobble:desert_gravel", "default:desert_sand", 1},
+            {"mycobble:sandstone_gravel", "mycobble:sandstone_sand", 1},
+            {"mycobble:silver_gravel", "default:silver_sand", 1},
+            {"mycobble:silver_cobble", "default:silver_sand", 1},
+            {"mycobble:sandstone_cobble", "default:sandstone_sand", 1},
+            {"mycobble:desert_sandstone_cobble", "mycobble:desert_sandstone_sand", 1},
+            {"mycobble:desert_sandstone_gravel", "mycobble:desert_sandstone_sand", 1},
+            {"flowers:chrysanthemum_green", "mypress:pressed_flower_green", 1},
+            {"flowers:dandelion_white", "mypress:pressed_flower_white", 1},
+            {"flowers:dandelion_yellow", "mypress:pressed_flower_yellow", 1},
+            {"flowers:geranium", "mypress:pressed_flower_blue", 1},
+            {"flowers:rose", "mypress:pressed_flower_red", 1},
+            {"flowers:tulip", "mypress:pressed_flower_orange", 1},
+            {"flowers:tulip_black", "mypress:pressed_flower_black", 1},
+            {"flowers:viola", "mypress:pressed_flower_viola", 1},
+            {"default:mese_crystal", "default:mese_crystal_fragment", 9},
+            {"default:obsidian", "default:obsidian_shard", 9},
+        	}
 
         local meta = minetest.get_meta(pos)
         local inv = meta:get_inventory()
@@ -153,7 +176,7 @@ on_receive_fields = function(pos, formname, fields, sender)
                         if res_stack:get_count() >= smax then
                         	return
                         end
-                        inv:add_item("res", {name = "mypress:sheet_" .. mat_name, count = amount})
+                        inv:add_item("res", {name = mat_name, count = amount})
                         ingot_stack:take_item(1)
                         inv:set_stack("ingot", 1, ingot_stack)
                         break

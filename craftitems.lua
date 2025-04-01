@@ -32,6 +32,56 @@ minetest.register_craftitem("mypress:copper_wire",{
 	description = "Copper Wire",
 })
 
+local flowers = {
+				{"green","Green"},
+				{"red","Red"},
+				{"orange","Orange"},
+				{"yellow","Yellow"},
+				{"black","Black"},
+				{"white","White"},
+				{"blue","Blue"},
+				{"viola","Viola"},
+				}
+for i in ipairs(flowers) do
+	local col = flowers[i][1]
+	local des = flowers[i][2]
+
+minetest.register_craftitem("mypress:pressed_flower_"..col,{
+	inventory_image = "mypress_pressed_flower_"..col..".png",
+	description = des.." Pressed Flower",
+})
+minetest.register_node("mypress:framed_pressed_flower_"..col,{
+	inventory_image = "mypress_picture_frame.png^mypress_pressed_flower_"..col..".png",
+	description = des.." Pressed Flower Picture",
+		tiles = {
+		"default_wood.png",
+		"default_wood.png",
+		"default_wood.png",
+		"default_wood.png",
+		"default_wood.png",
+		"mypress_picture_frame.png^mypress_pressed_flower_"..col..".png",
+	},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {cracky = 2, choppy = 2, not_in_creative_inventory=0, flammable = 1},
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, 0.4375, 0.5, 0.5, 0.5},
+			}
+		},
+})
+minetest.register_craft({
+	output = "mypress:framed_pressed_flower_"..col.." 1",
+	recipe = {
+				{"default:stick","default:stick","default:stick"},
+				{"default:stick","mypress:pressed_flower_"..col,"default:stick"},
+				{"default:stick","default:stick","default:stick"}
+				}
+})
+end
+
 if minetest.get_modpath("mystreets") then
 		minetest.register_craftitem("mypress:sheet_lead",{
 			inventory_image = "mypress_sheet_lead.png",
@@ -46,3 +96,18 @@ if minetest.get_modpath("mystreets") then
 			description = "Sheet Of Zinc",
 		})
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
