@@ -35,7 +35,7 @@ minetest.register_craftitem("mypress:wood_chunks",{
 	inventory_image = "mypress_wood_trash.png",
 	description = "Wood Chunks",
 })
-minetest.register_craftitem("mypress:wood_pieces",{
+minetest.register_craftitem("mypress:glass_pieces",{
 	inventory_image = "mypress_glass_trash.png",
 	description = "Glass Pieces",
 })
