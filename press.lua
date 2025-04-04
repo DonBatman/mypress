@@ -132,6 +132,7 @@ on_receive_fields = function(pos, formname, fields, sender)
             {"mystreets:ingot_lead", "mypress:sheet_lead", 2},
             {"mystreets:ingot_nickel", "mypress:sheet_nickel", 2},
             {"mystreets:ingot_zinc", "mypress:sheet_zinc", 2},
+            {"myores:silver_ingot", "mypress:sheet_silver", 2},
             {"default:acacia_wood", "mypress:sheet_paper", 10},
             {"default:aspen_wood", "mypress:sheet_paper", 10},
             {"default:pine_wood", "mypress:sheet_paper", 10},
@@ -189,6 +190,10 @@ on_receive_fields = function(pos, formname, fields, sender)
             {"vessels:glass_bottle", "mypress:glass_pieces", 5},
             {"xpanes:obsidian_pane_flat", "mypress:glass_pieces", 5},
             {"xpanes:pane_flat", "mypress:glass_pieces", 5},
+            {"myores:sodium_ingot", "myores:salt", 5},
+            {"myores:calcium_ingot", "myores:calcium", 5},
+            {"myores:chromium_ingot", "mypress:sheet_chromium", 5},
+            {"myores:manganese_ingot", "mypress:sheet_manganese", 5},
         	}
 
         local meta = minetest.get_meta(pos)

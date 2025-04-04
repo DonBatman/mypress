@@ -15,9 +15,21 @@ minetest.register_craftitem("mypress:sheet_steel",{
 	inventory_image = "mypress_sheet_steel.png",
 	description = "Sheet Of Steel",
 })
+minetest.register_craftitem("mypress:sheet_silver",{
+	inventory_image = "mypress_sheet_silver.png",
+	description = "Sheet Of Silver",
+})
 minetest.register_craftitem("mypress:sheet_gold",{
 	inventory_image = "mypress_sheet_gold.png",
 	description = "Sheet Of Gold",
+})
+minetest.register_craftitem("mypress:sheet_chromium",{
+	inventory_image = "mypress_sheet_chromium.png",
+	description = "Sheet Of Chromium",
+})
+minetest.register_craftitem("mypress:sheet_manganese",{
+	inventory_image = "mypress_sheet_manganese.png",
+	description = "Sheet Of Manganese",
 })
 minetest.register_craftitem("mypress:sheet_paper",{
 	inventory_image = "mypress_paper.png",
