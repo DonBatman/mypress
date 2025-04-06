@@ -127,8 +127,8 @@ on_receive_fields = function(pos, formname, fields, sender)
         local res_stack = inv:get_stack("res", 1)
 
         local mat_tab = {
-            {"mypress:sheet_copper", "copper_wire", 8},
-            {"mypress:sheet_paper", "book", 1},
+            {"mypress:sheet_copper", "mypress:copper_wire", 8},
+            {"mypress:sheet_paper", "mypress:book", 1},
         }
 
         if ingot_stack and not ingot_stack:is_empty() then
@@ -139,7 +139,7 @@ on_receive_fields = function(pos, formname, fields, sender)
                     local smax = (res_stack:get_stack_max())
 
                     if res_stack == nil or res_stack:is_empty() or
-                       (res_stack:get_name() == "mypress:" .. mat_name and
+                       (res_stack:get_name() == mat_name and
                         res_stack:get_count() + amount) then
                         if res_stack:get_count() >= smax then
                         	return
@@ -164,18 +164,13 @@ end,
 
 
 
-
-
-
-
-
 --Craft Machine
 
 minetest.register_craft({
 		output = 'mypress:machine',
 		recipe = {
 			{'', 'group:wood', ''},
-			{'default:steel_ingot', 'group:wood', 'default:steel_ingot'},
+			{'default:copper_ingot', 'group:wood', 'default:copper_ingot'},
 			{'', "group:wood", ''},		
 		},
 })
